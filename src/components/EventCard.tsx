@@ -69,14 +69,23 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
 
             {isRunning && event.registration_link && (
                 <div className="px-6 pb-6 mt-auto">
-                    <a
-                        href={event.registration_link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-600 dark:bg-cyan-500 px-4 py-3 text-sm font-bold text-white transition-all hover:bg-cyan-700 dark:hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/20 relative z-10"
-                    >
-                        Register Now <ArrowRight className="w-4 h-4" />
-                    </a>
+                    {event.registration_link.includes('citc.ncit.edu.np') || event.registration_link.startsWith('/') ? (
+                        <Link
+                            to={event.registration_link.replace('https://citc.ncit.edu.np', '')}
+                            className="flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-600 dark:bg-cyan-500 px-4 py-3 text-sm font-bold text-white transition-all hover:bg-cyan-700 dark:hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/20 relative z-10"
+                        >
+                            Register Now <ArrowRight className="w-4 h-4" />
+                        </Link>
+                    ) : (
+                        <a
+                            href={event.registration_link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-600 dark:bg-cyan-500 px-4 py-3 text-sm font-bold text-white transition-all hover:bg-cyan-700 dark:hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-500/20 relative z-10"
+                        >
+                            Register Now <ArrowRight className="w-4 h-4" />
+                        </a>
+                    )}
                 </div>
             )}
         </div>
