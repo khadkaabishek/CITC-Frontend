@@ -24,7 +24,7 @@ const EventsPage = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen pt-24 flex items-center justify-center bg-white dark:bg-[#0f172a] transition-colors duration-300">
+            <div className="min-h-screen pt-40 flex items-center justify-center bg-white dark:bg-[#0f172a] transition-colors duration-300">
                 <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-500"></div>
             </div>
         );
@@ -33,7 +33,7 @@ const EventsPage = () => {
     if (!eventData) {
         return (<>
             <div className='h-10'></div>
-            <div className="min-h-screen pt-24 text-center text-slate-900 dark:text-white bg-white dark:bg-[#0f172a] transition-colors duration-300">
+            <div className="min-h-screen pt-40 text-center text-slate-900 dark:text-white bg-white dark:bg-[#0f172a] transition-colors duration-300">
                 Failed to load event data.
             </div></>
         );
@@ -112,7 +112,7 @@ const EventsPage = () => {
         </script>
 
         {/* <div className='h-10'></div> */}
-        <div className="min-h-screen pt-24 pb-20 bg-white dark:bg-[#0f172a] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] transition-colors duration-300">
+        <div className="min-h-screen pt-40 pb-20 bg-white dark:bg-[#0f172a] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] transition-colors duration-300">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-500 to-cyan-400 dark:from-white dark:via-cyan-100 dark:to-cyan-200 mb-6">

@@ -33,7 +33,7 @@ const TeamPage = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen pt-24 flex items-center justify-center bg-[#0f172a]">
+            <div className="min-h-screen pt-40 flex items-center justify-center bg-[#0f172a]">
                 <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-500"></div>
             </div>
         );
@@ -41,7 +41,7 @@ const TeamPage = () => {
 
     if (!teamData) {
         return (
-            <div className="min-h-screen pt-24 text-center text-white bg-[#0f172a]">
+            <div className="min-h-screen pt-40 text-center text-white bg-[#0f172a]">
                 Failed to load team data.
             </div>
         );
@@ -131,7 +131,7 @@ const TeamPage = () => {
                 <meta name="robots" content={metaTags.meta.robots} />
             </Helmet>
 
-            <div className="min-h-screen pt-24 pb-20 bg-white dark:bg-[#0f172a] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] transition-colors duration-300">
+            <div className="min-h-screen pt-40 pb-20 bg-white dark:bg-[#0f172a] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] transition-colors duration-300">
                 {/* Organization Schema */}
                 {organizationSchema && (
                     <script type="application/ld+json">
