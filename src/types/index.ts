@@ -15,7 +15,7 @@ export interface Team {
 export interface Member {
     id: string;
     name: string;
-    type: string; // e.g., "Regular", "Faculty Advisor"
+    type: string; // e.g., "Executive", "Patron", "Faculty Advisor"
     title?: string;
     department?: string;
     email: string;
@@ -24,7 +24,7 @@ export interface Member {
     member_year: number;
     teamId: string;
     socials?: Socials;
-    semester?: string;
+    college_year?: number;
 }
 
 export interface Event {

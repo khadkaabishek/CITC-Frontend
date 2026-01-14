@@ -45,8 +45,8 @@
         "github": "https://github.com/manashdevbhatta"
       },
       "photo": "/media/2025/members/manash_dev_bhatta.avif",
-      "type": "Regular",
-      "semester": "VII/VIII",
+      "type": "Executive",
+      "college_year": 4,
       "teamId": "t_mentors_2025"
     },
     {
@@ -61,8 +61,8 @@
         "instagram": "https://www.instagram.com/niraj_bhusal551"
       },
       "photo": "/media/2025/members/niraj_bhusal.avif",
-      "type": "Regular",
-      "semester": "VII/VIII",
+      "type": "Executive",
+      "college_year": 4,
       "teamId": "t_mentors_2025"
     },
 
@@ -78,8 +78,8 @@
         "instagram": "https://www.instagram.com/abishek_khadka73/"
       },
       "photo": "/media/2025/members/abishek_khadka.avif",
-      "type": "Regular",
-      "semester": "V/VI",
+      "type": "Executive",
+      "college_year": 3,
       "teamId": "t_exec_2025"
     },
     {
@@ -90,8 +90,8 @@
       "email": "anuroop.231209@ncit.edu.np",
       "socials": {},
       "photo": "",
-      "type": "Regular",
-      "semester": "V/VI",
+      "type": "Executive",
+      "college_year": 3,
       "teamId": "t_exec_2025"
     },
     {
@@ -103,11 +103,12 @@
       "socials": {
         "github": "https://github.com/Apil-Khadka",
         "linkedin": "https://www.linkedin.com/in/apil-khadka/",
-        "instagram": "https://www.instagram.com/apil.me/"
+        "instagram": "https://www.instagram.com/apil.me/",
+        "website": "https://apilkhadka.com.np/"
       },
       "photo": "/media/2025/members/apil_khadka.avif",
-      "type": "Regular",
-      "semester": "V/VI",
+      "type": "Executive",
+      "college_year": 3,
       "teamId": "t_exec_2025"
     },
     {
@@ -122,8 +123,8 @@
         "instagram": "https://www.instagram.com/adhikari__arpan"
       },
       "photo": "/media/2025/members/arpan_adhikari.avif",
-      "type": "Regular",
-      "semester": "V/VI",
+      "type": "Executive",
+      "college_year": 3,
       "teamId": "t_exec_2025"
     },
     {
@@ -138,8 +139,8 @@
         "instagram": "https://www.instagram.com/niraj_bhatta_4/"
       },
       "photo": "/media/2025/members/niaj_bhatta.avif",
-      "type": "Regular",
-      "semester": "V/VI",
+      "type": "Executive",
+      "college_year": 3,
       "teamId": "t_exec_2025"
     },
     {
@@ -154,8 +155,8 @@
         "instagram": "https://www.instagram.com/sandesh.khadka.2/?hl=en"
       },
       "photo": "/media/2025/members/sandesh_khadka.avif",
-      "type": "Regular",
-      "semester": "V/VI",
+      "type": "Executive",
+      "college_year": 3,
       "teamId": "t_exec_2025"
     },
     {
@@ -169,8 +170,8 @@
         "instagram": "https://www.instagram.com/_saru00/"
       },
       "photo": "",
-      "type": "Regular",
-      "semester": "V/VI",
+      "type": "Executive",
+      "college_year": 3,
       "teamId": "t_exec_2025"
     },
     {
@@ -181,8 +182,8 @@
       "email": "shyam.231339@ncit.edu.np",
       "socials": {},
       "photo": "/media/2025/members/shyam_kishor_shah.avif",
-      "type": "Regular",
-      "semester": "V/VI",
+      "type": "Executive",
+      "college_year": 3,
       "teamId": "t_exec_2025"
     },
     {
@@ -193,8 +194,8 @@
       "email": "sudip.231244@ncit.edu.np",
       "socials": {},
       "photo": "/media/2025/members/shyam_kishor_shah.avif",
-      "type": "Regular",
-      "semester": "V/VI",
+      "type": "Executive",
+      "college_year": 3,
       "teamId": "t_exec_2025"
     },
     {
@@ -209,8 +210,8 @@
         "instagram": "https://www.instagram.com/abaneeeeshh/"
       },
       "photo": "",
-      "type": "Regular",
-      "semester": "III/IV",
+      "type": "Executive",
+      "college_year": 2,
       "teamId": "t_exec_2025"
     },
     {
@@ -221,8 +222,8 @@
       "email": "biraj.241212@ncit.edu.np",
       "socials": {},
       "photo": "/media/2025/members/biraj_joshi.avif",
-      "type": "Regular",
-      "semester": "III/IV",
+      "type": "Executive",
+      "college_year": 2,
       "teamId": "t_exec_2025"
     },
     {
@@ -235,8 +236,8 @@
         "github": "iksha241312-debug"
       },
       "photo": "/media/2025/members/iksha_gurung.avif",
-      "type": "Regular",
-      "semester": "III/IV",
+      "type": "Executive",
+      "college_year": 2,
       "teamId": "t_exec_2025"
     },
     {
@@ -251,8 +252,8 @@
         "instagram": "https://www.instagram.com/_pranish.manandhar/"
       },
       "photo": "",
-      "type": "Regular",
-      "semester": "III/IV",
+      "type": "Executive",
+      "college_year": 2,
       "teamId": "t_exec_2025"
     },
     {
@@ -267,8 +268,8 @@
         "instagram": "https://www.instagram.com/"
       },
       "photo": "/media/2025/members/anmol.avif",
-      "type": "Regular",
-      "semester": "I/II",
+      "type": "Executive",
+      "college_year": 1,
       "teamId": "t_exec_2025"
     }
   ]

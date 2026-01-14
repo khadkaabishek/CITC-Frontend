@@ -35,7 +35,7 @@ const Hero = () => {
                         </span>
 
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 relative">
-                            Technology Club
+                            Tech Club
                             <span className="absolute -inset-1 bg-cyan-500/20 blur-2xl -z-10 opacity-50" />
                         </span>
 
