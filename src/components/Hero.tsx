@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center pt-20 px-3 sm:px-4 overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center pt-32 px-3 sm:px-4 overflow-hidden">
             {/* Dynamic Background */}
             <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
 
@@ -48,11 +48,11 @@ const Hero = () => {
 
                     {/* Buttons */}
                     <div className="flex flex-col sm:flex-row items-center gap-6 animate-fade-in [animation-delay:600ms]">
-                        <a href="https://forms.gle/ye4PRPt5VpGiNAeF6" target="_blank" rel="noopener noreferrer" className="group relative px-8 py-4 bg-white text-slate-900 font-bold rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
+                        <Link to="/register/ai" className="group relative px-8 py-4 bg-white text-slate-900 font-bold rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
                             <span className="relative flex items-center gap-2">
                                 Join the Club <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
-                        </a>
+                        </Link>
                         <Link to="/events" className="px-8 py-4 text-slate-900 dark:text-white font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors flex items-center gap-2 group">
                             Explore Events
                             <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center group-hover:bg-cyan-100 dark:group-hover:bg-cyan-500/20 transition-colors">

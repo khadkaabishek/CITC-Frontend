@@ -5,15 +5,34 @@ import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
+            const currentScrollY = window.scrollY;
+
+            // Set scrolled state for styling
+            setIsScrolled(currentScrollY > 20);
+
+            // Auto-hide logic: Hide after 100px when scrolling down, show when scrolling up
+            if (currentScrollY > 100) {
+                if (currentScrollY > lastScrollY) {
+                    setIsVisible(false);
+                } else {
+                    setIsVisible(true);
+                }
+            } else {
+                setIsVisible(true);
+            }
+
+            setLastScrollY(currentScrollY);
         };
-        window.addEventListener('scroll', handleScroll);
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [lastScrollY]);
 
     const handleHomeClick = () => {
         window.scrollTo(0, 0);
@@ -29,8 +48,8 @@ const Navbar = () => {
     return (
         <>
             <nav
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-4' : 'py-6'
-                    }`}
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
+                    } ${isScrolled ? 'py-4' : 'py-6'}`}
             >
                 <div className="container mx-auto px-4 md:px-6">
                     <div
@@ -42,8 +61,8 @@ const Navbar = () => {
                         <div className="flex items-center justify-between">
                             {/* Logo */}
                             <Link to="/" className="flex items-center gap-3 group" onClick={handleHomeClick}>
-                                <div className={`relative flex items-center justify-center rounded-xl group-hover:scale-105 transition-all duration-300 ${isScrolled ? 'w-12 h-12' : 'w-24 h-24'}`}>
-                                    <img src="/CITCLOGO.png" alt="CITC Logo" className={`object-contain transition-all duration-300 ${isScrolled ? 'w-full h-full' : 'w-full h-full'}`} />
+                                <div className={`relative flex items-center justify-center rounded-xl transition-all duration-300 ${isScrolled ? 'w-10 h-10' : 'w-20 h-20'}`}>
+                                    <img src="/CITCLOGO.png" alt="CITC Logo" className="w-full h-full object-contain" />
                                 </div>
                             </Link>
 
@@ -74,25 +93,24 @@ const Navbar = () => {
                             {/* Action Button & Theme Toggle */}
                             <div className="hidden md:flex items-center gap-4">
                                 <ThemeToggle />
-                                <a
-                                    href="https://forms.gle/ye4PRPt5VpGiNAeF6"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <Link
+                                    to="/register/ai"
                                     className="group relative px-6 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold rounded-full overflow-hidden hover:bg-slate-800 dark:hover:bg-cyan-50 transition-colors"
                                 >
                                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-300 to-blue-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
                                     <span className="relative flex items-center gap-2">
                                         Join Club <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                     </span>
-                                </a>
+                                </Link>
                             </div>
 
                             {/* Mobile Menu Button */}
                             <div className="flex md:hidden items-center gap-4">
                                 <ThemeToggle />
                                 <button
-                                    className="text-slate-900 dark:text-white p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-colors"
+                                    className="text-slate-900 dark:text-white p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-lg transition-colors relative z-[60]"
                                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                    aria-label="Toggle menu"
                                 >
                                     {isMobileMenuOpen ? <X /> : <Menu />}
                                 </button>
@@ -102,46 +120,58 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {/* Mobile Menu Overlay */}
+            {/* Mobile Menu Backdrop */}
+            {isMobileMenuOpen && (
+                <div
+                    className="fixed inset-0 z-[55] bg-black/20 dark:bg-black/40 backdrop-blur-sm transition-opacity duration-300"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                />
+            )}
+
+            {/* Mobile Menu Sidebar (Drawer) */}
             <div
-                className={`fixed inset-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-xl md:hidden transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                className={`fixed top-0 right-0 bottom-0 z-[56] w-full max-w-xs bg-white dark:bg-[#0f172a] shadow-2xl transition-transform duration-500 ease-in-out md:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
                     }`}
             >
-                <div className="flex flex-col items-center justify-center h-full space-y-8 p-6">
-                    {navLinks.map((link) => (
-                        link.type === 'route' ? (
-                            <Link
-                                key={link.name}
-                                to={link.href}
-                                className="text-2xl font-bold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
-                                onClick={() => {
-                                    setIsMobileMenuOpen(false);
-                                    if (link.name === 'Home') {
-                                        handleHomeClick();
-                                    }
-                                }}
-                            >
-                                {link.name}
-                            </Link>
-                        ) : (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                className="text-2xl font-bold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                {link.name}
-                            </a>
-                        )
-                    ))}
-                    <a
-                        href="https://forms.gle/ye4PRPt5VpGiNAeF6"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-xl shadow-lg shadow-cyan-500/25 w-full max-w-xs text-center"
-                    >
-                        Join Club Now
-                    </a>
+                <div className="flex flex-col h-full pt-28 px-8 pb-10">
+                    <div className="flex flex-col space-y-6">
+                        {navLinks.map((link) => (
+                            link.type === 'route' ? (
+                                <Link
+                                    key={link.name}
+                                    to={link.href}
+                                    className="text-xl font-bold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+                                    onClick={() => {
+                                        setIsMobileMenuOpen(false);
+                                        if (link.name === 'Home') {
+                                            handleHomeClick();
+                                        }
+                                    }}
+                                >
+                                    {link.name}
+                                </Link>
+                            ) : (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className="text-xl font-bold text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    {link.name}
+                                </a>
+                            )
+                        ))}
+                    </div>
+
+                    <div className="mt-auto">
+                        <Link
+                            to="/register/ai"
+                            className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-xl shadow-lg shadow-cyan-500/25 w-full text-center"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            Join Club Now
+                        </Link>
+                    </div>
                 </div>
             </div>
         </>
