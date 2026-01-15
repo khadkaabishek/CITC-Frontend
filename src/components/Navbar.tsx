@@ -56,7 +56,7 @@ const Navbar = () => {
                 <div className="container mx-auto px-4 md:px-6">
                     {/* Desktop & Mobile Navbar Container */}
                     <div
-                        className={`mx-auto max-w-7xl transition-all duration-500 relative ring-1 ring-rose-200 dark:ring-rose-900/30 ${isMobileMenuOpen ? 'rounded-[2.5rem] bg-white dark:bg-slate-900 shadow-2xl' : 'rounded-full'
+                        className={`mx-auto max-w-7xl transition-all duration-500 relative ${isMobileMenuOpen ? 'rounded-[2.5rem] bg-white dark:bg-slate-900 shadow-2xl' : 'rounded-full'
                             } ${isScrolled || isMobileMenuOpen
                                 ? 'bg-white/95 dark:bg-[#0f172a]/95 backdrop-blur-xl shadow-lg px-6 py-3'
                                 : 'bg-transparent ring-transparent px-0 py-2'
@@ -101,17 +101,15 @@ const Navbar = () => {
                             {/* Desktop Action & Theme Toggle */}
                             <div className="hidden md:flex items-center gap-4">
                                 <ThemeToggle />
-                                <a
-                                    href="https://forms.gle/5zHdTCPAGnkakToC7"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <Link
+                                    to="/join"
                                     className="group relative px-6 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold rounded-full overflow-hidden hover:bg-slate-800 dark:hover:bg-cyan-50 transition-colors"
                                 >
                                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-300 to-blue-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
                                     <span className="test-join-us relative flex items-center gap-2">
                                         Join Club <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                     </span>
-                                </a>
+                                </Link>
                             </div>
 
                             {/* Mobile Controls */}
@@ -156,15 +154,13 @@ const Navbar = () => {
                                 ))}
 
                                 <div className="pt-8 border-t border-rose-100 dark:border-rose-900/10">
-                                    <a
-                                        href="https://forms.gle/5zHdTCPAGnkakToC7"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                    <Link
+                                        to="/join"
                                         className="flex items-center justify-center px-8 py-4 bg-rose-600 text-white font-bold rounded-2xl shadow-xl shadow-rose-500/20 w-fit min-w-[200px]"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         Join Club Now
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

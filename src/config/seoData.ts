@@ -44,6 +44,13 @@ export const SEO_PAGES = {
         keywords: "tech events, workshops, hackathons, coding competitions, tech seminars, CITC events, NCIT tech community",
         ogImage: "/media/og-team.avif",
         path: "/events"
+    },
+    join: {
+        title: "Join CITC - Club Membership Registration",
+        description: "Reserve your spot and join CITC (Computer Engineering Innovation & Tech Club) at NCIT. Fill out our membership form to become part of our thriving tech community and access exclusive workshops, events, and networking opportunities.",
+        keywords: "join CITC, club membership, CITC registration, tech club join, NCIT tech community membership, student club registration",
+        ogImage: "/media/og-team.avif",
+        path: "/join"
     }
 } as const;
 
