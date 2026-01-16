@@ -104,7 +104,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
 
                 {/* Name and Title at bottom - always visible */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform transition-transform duration-500">
-                    <h3 className="text-xl md:text-2xl font-bold mb-1 drop-shadow-lg">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-1 drop-shadow-lg">
                         {member.name}
                     </h3>
                     <p className="text-sm md:text-base text-cyan-300 font-medium drop-shadow-md">
