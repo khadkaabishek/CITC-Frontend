@@ -33,12 +33,12 @@ const AIRegistrationPage = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden py-12 sm:py-16" >
+    <div className="relative min-h-screen overflow-hidden py-12 sm:py-16 bg-white dark:bg-slate-950 transition-colors duration-300">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-radial from-cyan-500/5 via-transparent to-transparent pointer-events-none" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 blur-3xl rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+      <div className="absolute inset-0 bg-grid opacity-10 dark:opacity-5 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-radial from-cyan-500/5 dark:from-cyan-500/3 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 dark:bg-cyan-500/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 dark:bg-blue-500/5 blur-3xl rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-24 sm:pt-32">
         <motion.div
@@ -51,7 +51,7 @@ const AIRegistrationPage = () => {
           <motion.div
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm bg-white/80 dark:bg-slate-900/80 border border-cyan-500/20 mb-2 text-cyan-600 dark:text-cyan-400 text-xs sm:text-sm font-medium shadow-lg"
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full backdrop-blur-sm bg-white/70 dark:bg-slate-800/70 border border-cyan-400/40 dark:border-cyan-500/30 text-cyan-700 dark:text-cyan-300 text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl dark:hover:shadow-cyan-500/20 transition-all duration-200"
           >
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
             AI Image Prompting Competition
@@ -59,7 +59,7 @@ const AIRegistrationPage = () => {
 
           {/* Title & Description */}
           <div className="space-y-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 bg-clip-text text-transparent px-2">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 dark:from-cyan-400 dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent px-2 drop-shadow-lg">
               {!isExpired ? 'Physical Round starts in' : 'The Arena is Open'}
             </h1>
 
@@ -99,28 +99,29 @@ const AIRegistrationPage = () => {
           )}
 
           {/* Tally Form */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-4xl mx-auto pt-8"
-          >
-            <div className="backdrop-blur-sm bg-white/80 dark:bg-slate-900/80 border border-slate-200/50 dark:border-slate-700/50 rounded-2xl sm:rounded-3xl p-4 sm:p-8 md:p-12 shadow-2xl overflow-hidden">
-              <div className="max-w-2xl mx-auto">
-                <iframe
-                  data-tally-src="https://tally.so/embed/Gxpq6L?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                  loading="lazy"
-                  width="100%"
-                  height="600"
-                  frameBorder="0"
-                  marginHeight={0}
-                  marginWidth={0}
-                  title="AI Prompting"
-                  className="tally-embed rounded-xl"
-                  style={{ minHeight: '600px' }}
-                />
+          {isExpired && (
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-4xl mx-auto pt-8"
+            >
+              <div className="backdrop-blur-md bg-white/60 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 rounded-2xl sm:rounded-3xl p-4 sm:p-8 md:p-12 shadow-2xl dark:shadow-2xl dark:shadow-slate-900/50 overflow-hidden transition-all duration-300 hover:shadow-3xl dark:hover:shadow-slate-900/70">
+                <div className="max-w-2xl mx-auto">
+                  <iframe
+                    data-tally-src="https://tally.so/embed/KYVEEg?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                    loading="lazy"
+                    width="100%"
+                    height="645"
+                    title="AI Prompt Second Round"
+                    className="dark:[color-scheme:dark] transition-colors duration-300"
+                  />
+
+                </div>
               </div>
-            </div>
-          </motion.div> */}
+            </motion.div>
+          )}
         </motion.div>
       </div>
     </div>

@@ -39,6 +39,15 @@
       "/event/002/6da29576-c123-446c-b096-82d613ffa521.jpg"
     ]
   },
+  "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+  "status": "past",
+   "tags": [
+    "AI",
+    "Competition",
+    "Prompt Engineering",
+    "Creativity"
+  ]
+   },
 
     {
       "id": "001",
